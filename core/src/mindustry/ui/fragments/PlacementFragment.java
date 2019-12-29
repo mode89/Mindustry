@@ -26,6 +26,7 @@ import static mindustry.Vars.*;
 
 public class PlacementFragment extends Fragment{
     final int rowWidth = 4;
+    final boolean showID = false;
 
     public Category currentCategory = Category.distribution;
     Array<Block> returnArray = new Array<>();
@@ -330,6 +331,12 @@ public class PlacementFragment extends Fragment{
                                     t.left().defaults().left();
                                     lastDisplay.display(hoverTile, t);
                                 }).left().growX();
+                            }
+                            if(showID){
+                                topTable.row();
+                                if(hoverTile.entity != null){
+                                    topTable.add("ID: " + hoverTile.entity.getID());
+                                }
                             }
                         }
                     });
