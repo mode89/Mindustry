@@ -56,7 +56,7 @@ public abstract class UnlockableContent extends MappableContent{
 
     /** Override to make content always unlocked. */
     public boolean alwaysUnlocked(){
-        return false;
+        return true;
     }
 
     public final boolean unlocked(){

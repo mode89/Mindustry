@@ -24,7 +24,7 @@ public class Zone extends UnlockableContent{
     public Array<Item> resources = new Array<>();
 
     public Cons<Rules> rules = rules -> {};
-    public boolean alwaysUnlocked;
+    public boolean alwaysUnlocked = true;
     public int conditionWave = Integer.MAX_VALUE;
     public int launchPeriod = 10;
     public Schematic loadout = Loadouts.basicShard;
@@ -65,14 +65,14 @@ public class Zone extends UnlockableContent{
     }
 
     public boolean canUnlock(){
-        return data.isUnlocked(this) || !requirements.contains(r -> !r.complete());
+        return true;
     }
 
     public Array<ItemStack> getLaunchCost(){
         if(launchCost == null){
             updateLaunchCost();
         }
-        return launchCost;
+        return new Array<ItemStack>();
     }
 
     public Array<ItemStack> getStartingItems(){
