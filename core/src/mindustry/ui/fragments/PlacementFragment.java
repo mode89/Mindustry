@@ -26,7 +26,7 @@ import static mindustry.Vars.*;
 
 public class PlacementFragment extends Fragment{
     final int rowWidth = 4;
-    final boolean showID = false;
+    final boolean showID = true;
 
     public Category currentCategory = Category.distribution;
     Array<Block> returnArray = new Array<>();

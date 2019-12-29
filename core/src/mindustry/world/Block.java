@@ -139,7 +139,7 @@ public class Block extends BlockStorage{
     public float buildCostMultiplier = 1f;
     /** Whether this block has instant transfer.*/
     public boolean instantTransfer = false;
-    public boolean alwaysUnlocked = false;
+    public boolean alwaysUnlocked = true;
 
     protected TextureRegion[] cacheRegions = {};
     protected Array<String> cacheRegionStrings = new Array<>();
