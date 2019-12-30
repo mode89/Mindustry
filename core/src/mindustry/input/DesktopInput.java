@@ -11,6 +11,7 @@ import arc.scene.ui.*;
 import arc.scene.ui.layout.*;
 import arc.struct.*;
 import arc.util.ArcAnnotate.*;
+import arc.util.Log;
 import mindustry.*;
 import mindustry.core.GameState.*;
 import mindustry.entities.traits.BuilderTrait.*;
@@ -407,6 +408,7 @@ public class DesktopInput extends InputHandler{
 
         if(mode == none && !isPlacing()) {
             if(Core.input.keyTap(Binding.select_multiple) && !Core.scene.hasKeyboard()){
+                Log.info("Selecting entities ...");
                 selectX = cursorX;
                 selectY = cursorY;
             }
@@ -415,6 +417,7 @@ public class DesktopInput extends InputHandler{
                 if(cursorX == selectX && cursorY == selectY){
                     selectedEntities.clear();
                 }else{
+                    Log.info("List selected entities...");
                     NormalizeResult result = Placement.normalizeArea(selectX, selectY, cursorX, cursorY, 0, false, 100);
                     selectedEntities.clear();
                     for(int cx = result.x; cx <= result.x2; cx++){
@@ -425,6 +428,7 @@ public class DesktopInput extends InputHandler{
                             }
                         }
                     }
+                    Log.info("Selected entities: " + selectedEntities.size);
                 }
             }
         }
